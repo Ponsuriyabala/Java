@@ -22,13 +22,13 @@ public class posIntCount {
 				continue;
 			}
 			else {
-			int count=1;
-			for(int j=i+1;j<n;j++) {
-				if(num[i]==num[j]) {
-					count+=1;
-					num[j]=-1;
-				}
-			}System.out.println(num[i]+" | "+count);
+				int count=1;
+				for(int j=i+1;j<n;j++) {
+					if(num[i]==num[j]) {
+						count+=1;
+						num[j]=-1;
+					}
+				}System.out.println(num[i]+" | "+count);
 			}
 		}
 		in.close();}
