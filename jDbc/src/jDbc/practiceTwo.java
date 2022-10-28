@@ -5,11 +5,10 @@ public class practiceTwo {//fetch multiple value
 		String url="jdbc:mysql://localhost/sample";
 		String uname="root";
 		String pass="0000";
-		String query="select * from employee";
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		Connection con=DriverManager.getConnection(url,uname,pass);
 		Statement st=con.createStatement();
-		ResultSet re=st.executeQuery(query);
+		ResultSet re=st.executeQuery("select * from employee");
 		String userData="";
 		while(re.next()) {
 			userData=re.getString(1)+" : "+re.getInt(2);

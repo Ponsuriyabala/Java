@@ -11,7 +11,7 @@ public class fetchAnoclass{
    static void sQl(String name) throws Exception {
 	   Class.forName("com.mysql.cj.jdbc.Driver");
 	   Connection con=DriverManager.getConnection("jdbc:mysql://localhost/sample");
-	   Statement st=con.createStatement("");
+//	   Statement st=con.createStatement("");
 	   
    }
    

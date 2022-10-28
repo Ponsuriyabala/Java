@@ -2,11 +2,11 @@ package jDbc;
 //for name
 import java.sql.*;
 public class practiceOne {//fetch single value
-	public static void main(String args[]) throws Exception{
+	public static void main(String args[]) throws ClassNotFoundException, SQLException {
 		String url="jdbc:mysql://localhost/sample";
 			String uname="root";
 			String pass="0000";
-			String query="select age from employee where age=25;";
+			String query="select * from employee;";
 			
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		Connection con=DriverManager.getConnection(url,uname,pass);

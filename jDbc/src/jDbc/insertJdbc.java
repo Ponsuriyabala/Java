@@ -5,9 +5,10 @@ public class insertJdbc {
 	String url="jdbc:mysql://localhost/sample";
 	String uname="root";
 	String pass="0000";
-	String username="raaji";
+	String username="ra";
 	int userage=45; 
 	String query="insert into employee value ('"+username+"','"+userage+"') ";
+//	String query="insert into employee value (?,?) ";
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	Connection con=DriverManager.getConnection(url,uname,pass);
 	PreparedStatement st=con.prepareStatement(query);
