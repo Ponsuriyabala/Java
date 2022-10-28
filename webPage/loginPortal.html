@@ -4,26 +4,11 @@
 <link rel="stylesheet" href="./style.css">
 <meta charset="UTF-8">
 <title>LogIn Portal</title>
-<script>
-	function login() {
-		var fname = document.loginform.fname.value;
-		var lname = document.loginform.lastname.value;
-		var pass = document.loginform.pass.value;
-		if(fname==''||lname==''||pass=="")
-		{
-			alert("all fields required")
-			
-		}else
-		if (pass.length < 8) {
-			alert("Enter Strong password");
-		} else {
-			alert(fname + " " + lname + "\n Login Successfully");
-		}
-	}
+<script src="valid.js">
 </script>
 </head>
 <body>
-		<h1>W E L C O M E!!!</h1>
+		<h1>W E L C O M E  to  D E L I V E R Y!!!</h1>
 		<form onSubmit="login()"  name="loginform">
     <label for="fname">First Name</label><br>
     <input type="text" id="fname" required placeholder="Your name.."><br/>
