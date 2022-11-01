@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <servlet>
+  <servlet-name>any</servlet-name>
+  <servlet-class>suriya.addServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>any</servlet-name>
+  <url-pattern>/add</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>get</servlet-name>
+  <servlet-class>suriya.GetaddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>get</servlet-name>
+  <url-pattern>/get</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>post</servlet-name>
+  <servlet-class>suriya.postaddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>post</servlet-name>
+  <url-pattern>/post</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+  <servlet-name>path</servlet-name>
+  <servlet-class>suriya.SrequestDispatcher</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>path</servlet-name>
+  <url-pattern>/ReqDis</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>dispatcher</servlet-name>
+  <servlet-class>suriya.GrequestDispatcher</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>dispatcher</servlet-name>
+  <url-pattern>/res</url-pattern>
+  </servlet-mapping>
+   
+   
+   
+  <servlet>
+  <servlet-name>redirect</servlet-name>
+  <servlet-class>suriya.setSendDirect</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>redirect</servlet-name>
+  <url-pattern>/sendDir</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>sendDirect</servlet-name>
+  <servlet-class>suriya.getSendDirect</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>sendDirect</servlet-name>
+  <url-pattern>/sendRes</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>Session</servlet-name>
+  <servlet-class>suriya.insertSession</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Session</servlet-name>
+  <url-pattern>/session</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>sessions</servlet-name>
+  <servlet-class>suriya.getSession</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>sessions</servlet-name>
+  <url-pattern>/sessions</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+  <servlet-name>cookie</servlet-name>
+  <servlet-class>suriya.addCookies</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>cookie</servlet-name>
+  <url-pattern>/cookie</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>cookies</servlet-name>
+  <servlet-class>suriya.getcookie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>cookies</servlet-name>
+  <url-pattern>/cookies</url-pattern>
+  </servlet-mapping>
+</web-app>
