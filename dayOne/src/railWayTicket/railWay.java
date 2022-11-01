@@ -24,7 +24,7 @@ public class railWay {
 		System.out.println("------------------");
 		choiceSel();
 		in.close();
-	}
+	}	
 	static void choiceSel(){
 		Scanner in=new Scanner(System.in);
 		System.out.println("1.Booking ticket \n 2.Available tickets \n 3.Cancel tickts \n 4.Booked Tickets \n5.exit");

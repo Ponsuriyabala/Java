@@ -11,7 +11,7 @@ public class printMiddle {
 	String miDDle(String s){
 		String st="";
 		int n=s.length()/2;
-		if(n%2==0) {
+		if(s.length()%2==0) {
 			st+=s.charAt(n-1);
 			st+=s.charAt(n);
 		}
