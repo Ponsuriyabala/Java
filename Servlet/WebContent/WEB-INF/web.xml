@@ -30,7 +30,7 @@
   </servlet-mapping>
 
 
-  <servlet>
+  <!--<servlet>
   <servlet-name>path</servlet-name>
   <servlet-class>suriya.SrequestDispatcher</servlet-class>
   </servlet>
@@ -45,7 +45,7 @@
   <servlet-mapping>
   <servlet-name>dispatcher</servlet-name>
   <url-pattern>/res</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
    
    
    

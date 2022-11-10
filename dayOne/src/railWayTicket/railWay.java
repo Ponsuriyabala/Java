@@ -177,7 +177,6 @@ public class railWay {
 		System.out.println("Booked Successfully....");
 	}
 	public static void view() {
-		Passenger p = new Passenger();
 		for(int i=0;i<k;i++) {
 			if(Tickets[i].name!="cancel")
 				display(Tickets[i]);

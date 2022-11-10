@@ -1,10 +1,12 @@
 package thirdPdf;
+import HospitalManagement.*;
 import java.util.*;
 public class longSubString {
-	public static void main(String args[]) {
+	public static void main(String args[]) throws Exception {
 		Scanner in=new Scanner(System.in);
 		String str=in.nextLine();
 		int n=str.length();
+		HospitalManagement.DB.verify(n);
 		int arrSize=n*(n+1)/2;
 		System.out.print(Arrays.toString(SubString(str,arrSize)));
 		in.close();}

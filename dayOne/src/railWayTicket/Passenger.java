@@ -16,8 +16,5 @@ public class Passenger {
 		this.pnr=pnr;
 		this.price=price;
 		this.PnrNo=PnrNo;
-	}
-	public Passenger() {
-		super();
-	}
+	}	
 }
