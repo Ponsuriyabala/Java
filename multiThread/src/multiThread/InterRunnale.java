@@ -1,19 +1,22 @@
 package multiThread;
-public class beGininG {
+
+public class InterRunnale {
 	public static void main(String args[]) {
-		Msg1 obj=new Msg1();
-		Msg2 obj2=new Msg2();
-		obj.start();
+		Msg3 obj=new Msg3();
+		Msg4 obj2=new Msg4();
+		Thread t1=new Thread(obj);
+		Thread t2=new Thread(obj2);
+		t1.start();
 		try {
 			Thread.sleep(10);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		obj2.start();
+		t2.start();
 		
 	}
 }
-class Msg1 extends Thread{
+class Msg3 implements Runnable{
 	public void run() {
 		for(int i=0;i<5;i++) {
 			print();
@@ -28,7 +31,7 @@ class Msg1 extends Thread{
 		System.out.println("Helloworld");
 	}
 }
-class Msg2 extends Thread{
+class Msg4 implements Runnable{
 	public void run() {
 		for(int i=0;i<5;i++) {
 			System.out.println("halloworld");

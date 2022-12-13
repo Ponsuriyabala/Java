@@ -11,7 +11,7 @@ public class nthOddno {
 			sum+=i;
 		}
 		System.out.println(sum);
-		in.close();
+	in.close();
 	}
 }
 /*Write a program in Java to display the n terms of odd natural number

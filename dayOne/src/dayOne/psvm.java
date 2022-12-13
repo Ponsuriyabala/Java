@@ -1,8 +1,31 @@
 package dayOne;
 import java.util.*;
 public class psvm {
+	
+	psvm()
+	{
+		 print();
+	}
+	private final static void print() {
+		System.out.println("Time");
+		psvm obj =new psvm();
+		obj.first();
+	}
+	private  void first() {
+		int a=5;
+		
+	}
+	
+	//psvm
 	public static void main(String a[]) {
 		Scanner in=new Scanner(System.in);
+		//p
+		psvm obj = new psvm();
+		char s='\u0B87';
+		String f="r" ;
+		System.out.print(s);
+		System.out.print(f);
+		
 		//	 b obj=new b(5);
 		//	 show(a[0]);
 		// }
@@ -59,6 +82,9 @@ public class psvm {
 //		}
 //	}
 //}
+
+		
+		
 		
 }
 }
