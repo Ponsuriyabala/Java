@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./style.css">
+<meta charset="UTF-8">
+<title>LogIn Portal</title>
+<script src="valid.js">
+</script>
+</head>
+<body>
+		<h1>W E L C O M E  to  D E L I V E R Y!!!</h1>
+		<form onSubmit="login()"  name="loginform">
+    <label for="fname">First Name</label><br>
+    <input type="text" id="fname" required placeholder="Your name.."><br/>
+
+    <label for="lname">Last Name</label><br>
+    <input type="text" id="lname" name="lastname" required placeholder="Your last name.."><br/>
+    
+    <label for="pass">Password</label><br>
+    <input type="password" id="pass" name="password" required placeholder="Enter password.."><br/>
+			
+	<input type="checkbox" name="agree" required style="width:4%;height:15px">
+	<label for="agree"  style=font-size:25px>I Agree</label><br>
+	
+	<button type="submit" onClick="login()" value="sub">Submit </button>
+		</form>
+</body>
+</html>
