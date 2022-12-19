@@ -18,6 +18,9 @@ class Msg1 extends Thread{
 		for(int i=0;i<5;i++) {
 			print();
 			try {
+				  System.out.println(
+			                "Thread " + Thread.currentThread().getId()
+			                + " is running");
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();

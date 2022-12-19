@@ -5,7 +5,7 @@ public class SampleExtends {
 		A obj=new B();
 		obj.msg();
 		obj.print();
-//		obj.lose(); its not in A
+//		obj.lose();// its not in A
 		obj.loe();
 	}
 }
