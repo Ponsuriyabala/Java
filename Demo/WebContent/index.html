@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-2.0.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
 <body>
 Hello World
 <form action="add" method="get">
 Enter number1 :<input type="text" name="num1"><br>
 Enter number2 :<input type="text" name="num2"><br>
+	<div class="ui-field-contain">
+		<label for="select-1">Select:</label>
+		<select name="select-1" id="select-1">
+			<option value="A">A</option>
+			<option value="B">B</option>
+			<option value="C">C</option>
+		</select>
+		<fieldset data-role="controlgroup" id="checkboxes-1">
+			<legend></legend>
+			<input name="checkbox-1a" id="checkbox-1a" type="checkbox"/>
+			<label for="checkbox-1a">A</label>
+			<input name="checkbox-1b" id="checkbox-1b" type="checkbox"/>
+			<label for="checkbox-1b">B</label>
+			<input name="checkbox-1c" id="checkbox-1c" type="checkbox"/>
+			<label for="checkbox-1c">C</label>
+		</fieldset>
+	</div>
 <input type="submit">
 </form>
 </body>

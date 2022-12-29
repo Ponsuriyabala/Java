@@ -5,7 +5,7 @@ public class JoinAndIsAlive {
 		Msg6 obj2=new Msg6();
 		Thread t1=new Thread(obj);
 		Thread t2=new Thread(obj2);
-		
+		Thread t3=new Thread(obj);
 		t1.start();
 		try {
 			Thread.sleep(10);
@@ -16,6 +16,8 @@ public class JoinAndIsAlive {
 		System.out.println(t1.isAlive());
 		t1.join();
 		t2.join();
+		t3.start();
+		t3.join(2000);
 		System.out.println(t1.isAlive());
 		System.out.println("Bye");
 		
@@ -39,7 +41,7 @@ class Msg5 implements Runnable{
 class Msg6 implements Runnable{
 	public void run() {
 		for(int i=0;i<5;i++) {
-			System.out.println("halloworld");
+			System.out.println("hall");
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {

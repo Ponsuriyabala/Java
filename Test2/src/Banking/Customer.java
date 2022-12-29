@@ -1,7 +1,7 @@
 package Banking;
 import java.util.ArrayList;
 import java.util.Scanner;
-public class Customer extends OnlineBank{
+public class Customer{
 	private int cusId=0;
 	private long accountNo=10000;
 	private String name;
@@ -90,7 +90,7 @@ public class Customer extends OnlineBank{
 				System.out.println("Enter withDrawal Amount");
 				int withdrawal=in.nextInt();
 				if(withdrawal<balance) {
-					balance=withDrawal(withdrawal,balance);
+					balance-=withdrawal;
 					setBalance(balance);
 					AccountStatement withdrawStat=new AccountStatement("Withdrawal",withdrawal,balance);
 					stat.add(withdrawStat);
@@ -99,8 +99,7 @@ public class Customer extends OnlineBank{
 			case 2:
 				System.out.println("Enter deposit Amount");
 				int deposit=in.nextInt();
-				
-				balance=Deposit(deposit,balance);
+				balance+=deposit;
 				setBalance(balance);
 				AccountStatement depositStat=new AccountStatement("Deposit",deposit,balance);
 				stat.add(depositStat);

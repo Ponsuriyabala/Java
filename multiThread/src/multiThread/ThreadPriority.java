@@ -18,47 +18,35 @@ public class ThreadPriority {
 		t1.setPriority(Thread.MIN_PRIORITY);
 		t3.setPriority(Thread.MAX_PRIORITY);
 		t1.start();
-		try {
-			Thread.sleep(10);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 		t2.start();
 		t3.start();
-		t1.setName("Suriya");
-		t2.setName("Hari");
-		System.out.println(t1.getName());
-		System.out.println(t2.getName());
-		System.out.println(t3.getName());
-		System.out.println(t1.getPriority());
-		System.out.println(t2.getPriority());
-		System.out.println(t3.getPriority());
+//		t1.setName("Suriya");
+//		t2.setName("Hari");
+//		System.out.println(t1.getName());
+//		System.out.println(t2.getName());
+//		System.out.println(t3.getName());
+//		System.out.println(t1.getPriority());
+//		System.out.println(t2.getPriority());
+//		System.out.println(t3.getPriority());
 	}
 }
 class Msg7 implements Runnable{
+	Thread t;
 	public void run() {
+		t=Thread.currentThread();
 		for(int i=0;i<5;i++) {
 			print();
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+//			System.out.println(t.getName()+" "+t.getPriority());
 		}
 	}
 	private void print() {
-		System.out.println("Helloworld");
+		System.out.println(t.getName());
 	}
 }
 class Msg8 implements Runnable{
 	public void run() {
 		for(int i=0;i<5;i++) {
-			System.out.println("halloworld");
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+			System.out.println(Thread.currentThread().getName());
 		}
 	}
 }
