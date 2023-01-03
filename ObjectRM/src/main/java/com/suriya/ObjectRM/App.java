@@ -15,9 +15,9 @@ public class App
     public static void main( String[] args )
     {
         Employee suriya=new Employee();
-        suriya.setId(1);
+        suriya.setId(2);
         suriya.setName("Sha.Suriya");
-        suriya.setAge(22);
+        suriya.setAge(23);
         
         Configuration con=new Configuration().configure().addAnnotatedClass(Employee.class);//if file default as hibernate.cfg.xml...otherwise .cofigure(file_name);
         
