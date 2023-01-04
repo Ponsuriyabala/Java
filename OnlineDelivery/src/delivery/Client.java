@@ -24,7 +24,8 @@ public class Client{
 							Admin admin=new Admin();
 							Database db=new Database();
 							deliveryBoy=admin.deliveryAllocate();
-							db.changeAvailabletime("Delivery Boy contact number : "+deliveryBoy);
+							db.changeAvailabletime(deliveryBoy);
+							System.out.println("Delivery Boy's "+deliveryBoy+" "+billAmount+"to be Handover...");
 							System.out.println("Order to be delivered");
 							break loopBreaker;
 						}
@@ -33,6 +34,7 @@ public class Client{
 							Database db=new Database();
 							deliveryBoy=admin.deliveryAllocate();
 							db.changeAvailabletime(deliveryBoy);
+							System.out.println("Delivery Boy's "+deliveryBoy);
 							System.out.println("Order to be delivered");
 							break loopBreaker;
 						}
