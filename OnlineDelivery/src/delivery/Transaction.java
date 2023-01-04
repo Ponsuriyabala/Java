@@ -7,8 +7,6 @@ public class Transaction {
 		this.userid = userid;
 		this.deliveryboyid = deliveryboyid;
 		this.paymentAmount = paymentAmount;
-		this.username = username;
-		this.deliveryboyname = deliveryboyname;
 		this.paymentType = paymentType;
 	}
 	public int getPaymentid() {

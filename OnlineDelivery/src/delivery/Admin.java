@@ -15,7 +15,7 @@ public class Admin {
 	void adminOption() {
 		Loopbreaker:
 			while(true) {
-				System.out.println("1.Resturant\n2.DeliveryBoy\n3.Payment\n4.Order Detail\n0.Exit");
+				System.out.println("1.Resturant\n2.DeliveryBoy\n0.Exit");
 				choice=in.nextInt();
 				switch(choice) {
 				case 1:
@@ -23,12 +23,6 @@ public class Admin {
 					break;
 				case 2:
 					editDeliveryBoy();
-					break;
-				case 3:
-
-					break;
-				case 4:
-
 					break;
 				case 0:
 
@@ -41,7 +35,7 @@ public class Admin {
 	private void editResturant() {
 		Loopbreaker:
 			while(true) {
-				System.out.println("1.Add Resturant\n2.Update Resturant Detail\n3.Delete Resturant\n4.View Resturant List\n5.viewMenu\n6.EditMenu\n0.Exit");
+				System.out.println("1.Add Resturant\n2.View Resturant List\n3.viewMenu\n4.AddMenu\n0.Exit");
 				choice=in.nextInt();
 				switch(choice) {
 				case 1:
@@ -66,16 +60,10 @@ public class Admin {
 					db.addResturant(add);
 					break;
 				case 2:
-
-					break;
-				case 3:
-
-					break;
-				case 4:
 					hotelLocation=viewLocation();
 					viewResturant(hotelLocation);
 					break;
-				case 5:
+				case 3:
 					hotelLocation=viewLocation();
 					viewResturant(hotelLocation);
 					System.out.println("Enter Resturant Id");
@@ -83,7 +71,7 @@ public class Admin {
 					ArrayList<MenuList> obj=listMenu(selectHotel);
 					viewMenu(obj);
 					break;
-				case 6:
+				case 4:
 					hotelLocation=viewLocation();
 					viewResturant(hotelLocation);
 					System.out.println("Enter Resturant Id");
@@ -98,44 +86,22 @@ public class Admin {
 			}
 	}
 	private void editMenu(int selectHotel) {
-		Loopbreaker:
-			while(true) {
-				System.out.println("1.Add Menu\n2.Update Menu Price\n3.Delete Menu\n4.Menu Count\n0.Exit");
-				choice=in.nextInt();
-				switch(choice) {
-				case 1:
-					viewItem();
-					System.out.println("Enter Item id");
-					dishType=in.next();
-					System.out.println("Price of Dish");
-					price=in.nextInt();
-					System.out.println("Enter Count of Dish");
-					dishCount = in.nextInt();
-					MenuList list=new MenuList(price,dishCount,dishType,selectHotel);
-					Database db=new Database();
-					db.addMenu(list,selectHotel);
-					break;
-				case 2:
-
-					break;
-				case 3:
-
-					break;
-				case 4:
-
-					break;
-				case 0:
-
-					break Loopbreaker;
-				default:
-					System.out.println("Enter listed values");
-				}
-			}
+		System.out.println("Add Menu");
+		viewItem();
+		System.out.println("Enter Item id");
+		dishType=in.next();
+		System.out.println("Price of Dish");
+		price=in.nextInt();
+		System.out.println("Enter Count of Dish");
+		dishCount = in.nextInt();
+		MenuList list=new MenuList(price,dishCount,dishType,selectHotel);
+		Database db=new Database();
+		db.addMenu(list,selectHotel);
 	}
 	private void editDeliveryBoy() {
 		Loopbreaker:
 			while(true) {
-				System.out.println("1.Add DeliveryBoy\n2.Update DeliveryBoy\n3.Delete DeliveryBoy\n4.View DeliveryBoy List\n0.Exit");
+				System.out.println("1.Add DeliveryBoy\n2.DeliveryBoy List\n0.Exit");
 				choice=in.nextInt();
 				switch(choice) {
 				case 1:
@@ -158,12 +124,6 @@ public class Admin {
 					db.addDeliveryBoy(addDB);
 					break;
 				case 2:
-
-					break;
-				case 3:
-
-					break;
-				case 4:
 					viewDeliveryBoy();
 					break;
 				case 0:
@@ -194,10 +154,9 @@ public class Admin {
 		return obj;
 	}
 	void viewResturant(String location) {
-		System.out.println(location);
 		Database db=new Database();
 		ArrayList<Resturant> obj=db.viewResturants(location);
-		System.out.println(obj);
+		System.out.println();
 		System.out.println("Resturant ID "+"Resturant name       "+" Resturant Number");
 		for(Resturant o:obj) {
 			System.out.println(o.getId()+"            "+o.getName()+"         "+o.getContact());
@@ -268,24 +227,33 @@ public class Admin {
 				ArrayList<String> obj=db.DeliveryBoy();
 				String dBoyContact=obj.get(allocatedDBoy);
 				ArrayList<DeliveryBoy> boy=db.listDeliveryBoy();
+				System.out.println(dBoyContact);
 				for(DeliveryBoy o:boy) {
 					DateTimeFormatter dtf = DateTimeFormatter.ofPattern("YYYY-MM-dd HH:mm:ss");  
 					LocalDateTime now = LocalDateTime.now();  
 					String currentTime=dtf.format(now);
 					if(dBoyContact.equals(o.getContact())) {
 						String boyAvailableTime=o.getTime();
+						System.out.println("in if");
 						SimpleDateFormat simple=new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
 						try {
-							Date d1=simple.parse(currentTime);
-							Date d2=simple.parse(boyAvailableTime);
+							Date d2=simple.parse(currentTime);
+							Date d1=simple.parse(boyAvailableTime);
 							long inTime=d2.getTime()-d1.getTime();
+							long inDays= (inTime/ (1000 * 60 * 60 * 24))% 365;
+							long inHours= (inTime/ (1000 * 60 * 60))% 24;
 							long inSeconds= (inTime/ 1000)% 60;
 							long inMinutes= (inTime/ (1000 * 60))% 60;
-							if(inMinutes<=0) {
-								if(inSeconds<=0) {
-									System.out.println(o.getContact());
-									deliveryBoy= o.getContact();
-									break loopBreaker;
+							System.out.println(inDays+" "+inHours+" "+inMinutes+" "+inSeconds);
+							if(inDays<=0) {
+								if(inHours<=0) {
+									if(inMinutes<=0) {
+										if(inSeconds<=0) {
+											System.out.println(o.getContact());
+											deliveryBoy= o.getContact();
+											break loopBreaker;
+										}
+									}
 								}
 							}
 						} catch (ParseException e) {

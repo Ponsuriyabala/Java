@@ -58,7 +58,7 @@ public class Delivery {
 			db.reqister(obj);
 	}
 
-	private void userOption() {
+	void userOption() {
 		int choice;
 		Loopbreaker:
 			while(true) {
@@ -78,7 +78,7 @@ public class Delivery {
 				}
 			}
 	}
-	private void entryOption() {
+	void entryOption() {
 		int choice;
 		Loopbreaker:
 			while(true) {
